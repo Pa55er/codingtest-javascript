@@ -13,6 +13,3 @@ function solution(n, s) {
     }
     return answer;
 }
-
-debugger;
-solution(2,9);
