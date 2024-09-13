@@ -17,7 +17,7 @@ function solution(want, number, discount) {
                 break;
             }
         }
-        if(flag == 0 && m.size == 0) answer++;
+        if(flag == 0) answer++;
     }
     return answer;
 }
