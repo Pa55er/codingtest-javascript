@@ -3,7 +3,7 @@ function solution(orders, course) {
     const maxCount = new Array(11).fill(0);
     let target;
     
-    const backTracking = (index, len, str) => {
+    const dfs = (index, len, str) => {
         if(len === 0) {
             if(courseCount.has(str)) {
                 courseCount.set(str, courseCount.get(str) + 1);
@@ -13,14 +13,14 @@ function solution(orders, course) {
             }
         }
         for(let i = index; i < target.length; i++) {
-            backTracking(i + 1, len - 1, str + target[i]);
+            dfs(i + 1, len - 1, str + target[i]);
         }
     }
     
     for(const len of course) {
         for(target of orders) {
             target = target.split("").sort();
-            backTracking(0, len, "");
+            dfs(0, len, "");
         }
     }
     return Array.from(courseCount.keys())
