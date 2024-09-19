@@ -9,13 +9,11 @@ function solution(n, costs) {
         if(a == b) return;
         answer += c;
         if(parent[a] < parent[b]) {
-            parent[b] = a;
-        }
-        else if(parent[a] == parent[b]) {
-            parent[a]--;
+            parent[a] += parent[b];
             parent[b] = a;
         }
         else {
+            parent[b] += parent[a];
             parent[a] = b;
         }
     }
