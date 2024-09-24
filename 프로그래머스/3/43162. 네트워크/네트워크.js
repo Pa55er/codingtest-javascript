@@ -1,7 +1,7 @@
 function solution(n, computers) {
     const dfs = (i) => {
         for(let j = 0; j < n; j++) {
-            if(i != j && computers[i][j] == 1 && visited[j] == false) {
+            if(i != j && computers[i][j] === 1 && visited[j] == false) {
                 visited[j] = true;
                 dfs(j);
             }
